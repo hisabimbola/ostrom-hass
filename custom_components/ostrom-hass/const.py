@@ -26,25 +26,25 @@ ATTRIBUTION = "Data provided by Ostrom GmbH"
 SENSOR_TYPES = {
     "electricity_current_price": {
         "name": "Ostrom Electricity Current Price",
-        "unit": "€/kWh",
+        "unit": "¢/kWh",
         "icon": "mdi:currency-eur",
         "device_class": "monetary",
     },
     "electricity_next_hour_price": {
         "name": "Ostrom Electricity Next Hour Price",
-        "unit": "€/kWh",
+        "unit": "¢/kWh",
         "icon": "mdi:currency-eur",
         "device_class": "monetary",
     },
     "electricity_lowest_price_today": {
         "name": "Ostrom Electricity Lowest Price Today",
-        "unit": "€/kWh",
+        "unit": "¢/kWh",
         "icon": "mdi:currency-eur",
         "device_class": "monetary",
     },
     "electricity_highest_price_today": {
         "name": "Ostrom Electricity Highest Price Today",
-        "unit": "€/kWh",
+        "unit": "¢/kWh",
         "icon": "mdi:currency-eur",
         "device_class": "monetary",
     },
@@ -65,5 +65,11 @@ SENSOR_TYPES = {
         "unit": None,
         "icon": "mdi:chart-line",
         "device_class": None,
-    }
+    },
+    "electricity_gross_current_price": {
+        "name": "Ostrom Electricity Gross Current Price",
+        "unit": "¢/kWh",
+        "icon": "mdi:currency-eur",
+        "device_class": "monetary",
+    },
 }

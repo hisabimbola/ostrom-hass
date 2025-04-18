@@ -1,21 +1,22 @@
 """Data coordinator for the Ostrom integration."""
 import asyncio
-import logging
 from datetime import datetime, timedelta, timezone
+import logging
 from typing import Any
 
 import async_timeout
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.device_registry import DeviceEntryType
 from homeassistant.helpers.entity import DeviceInfo
-from homeassistant.helpers.update_coordinator import (CoordinatorEntity,
-                                                      DataUpdateCoordinator,
-                                                      UpdateFailed)
+from homeassistant.helpers.update_coordinator import (
+    CoordinatorEntity,
+    DataUpdateCoordinator,
+    UpdateFailed,
+)
 from homeassistant.util import dt as dt_util
 
 from .api import OstromApiClient, OstromAuthError, OstromConnectionError
-from .const import (ATTRIBUTION, BASE_URL, DOMAIN, MANUFACTURER, MODEL,
-                    UPDATE_INTERVAL)
+from .const import ATTRIBUTION, BASE_URL, DOMAIN, MANUFACTURER, MODEL, UPDATE_INTERVAL
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -206,6 +207,7 @@ class OstromDataCoordinator(DataUpdateCoordinator[dict[str, Any]]):
 
             return {
                 "electricity_current_price": current_price["price"],
+                "electricity_gross_current_price": current_price["gross_price"],
                 "electricity_next_hour_price": next_price["price"] if next_price else None,
                 "electricity_lowest_price_today": min(today_price_values),
                 "electricity_highest_price_today": max(today_price_values),

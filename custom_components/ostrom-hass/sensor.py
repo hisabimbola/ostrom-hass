@@ -5,11 +5,14 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any, Callable
 
-from homeassistant.components.sensor import (SensorDeviceClass, SensorEntity,
-                                             SensorEntityDescription,
-                                             SensorStateClass)
+from homeassistant.components.sensor import (
+    SensorDeviceClass,
+    SensorEntity,
+    SensorEntityDescription,
+    SensorStateClass,
+)
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CURRENCY_EURO
+from homeassistant.const import CURRENCY_CENT, CURRENCY_EURO
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -39,16 +42,25 @@ PRICE_SENSORS: tuple[OstromSensorEntityDescription, ...] = (
     OstromSensorEntityDescription(
         key="current_price",
         name="Current Price",
-        native_unit_of_measurement=f"{CURRENCY_EURO}/kWh",
+        native_unit_of_measurement=f"{CURRENCY_CENT}/kWh",
         device_class=SensorDeviceClass.MONETARY,
         state_class=None,
         icon="mdi:currency-eur",
         value_fn=lambda data: data["electricity_current_price"],
     ),
     OstromSensorEntityDescription(
+        key="gross_current_price",
+        name="Gross Current Price",
+        native_unit_of_measurement=f"{CURRENCY_CENT}/kWh",
+        device_class=SensorDeviceClass.MONETARY,
+        state_class=None,
+        icon="mdi:currency-eur",
+        value_fn=lambda data: data["electricity_gross_current_price"],
+    ),
+    OstromSensorEntityDescription(
         key="next_hour_price",
         name="Next Hour Price",
-        native_unit_of_measurement=f"{CURRENCY_EURO}/kWh",
+        native_unit_of_measurement=f"{CURRENCY_CENT}/kWh",
         device_class=SensorDeviceClass.MONETARY,
         state_class=None,
         icon="mdi:currency-eur",
@@ -57,7 +69,7 @@ PRICE_SENSORS: tuple[OstromSensorEntityDescription, ...] = (
     OstromSensorEntityDescription(
         key="lowest_price_today",
         name="Lowest Price Today",
-        native_unit_of_measurement=f"{CURRENCY_EURO}/kWh",
+        native_unit_of_measurement=f"{CURRENCY_CENT}/kWh",
         device_class=SensorDeviceClass.MONETARY,
         state_class=None,
         icon="mdi:currency-eur",
@@ -66,7 +78,7 @@ PRICE_SENSORS: tuple[OstromSensorEntityDescription, ...] = (
     OstromSensorEntityDescription(
         key="highest_price_today",
         name="Highest Price Today",
-        native_unit_of_measurement=f"{CURRENCY_EURO}/kWh",
+        native_unit_of_measurement=f"{CURRENCY_CENT}/kWh",
         device_class=SensorDeviceClass.MONETARY,
         state_class=None,
         icon="mdi:currency-eur",

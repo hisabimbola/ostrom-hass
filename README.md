@@ -25,7 +25,7 @@ This integration allows you to monitor your Ostrom electricity prices and fees i
 
 1. Make sure you have [HACS](https://hacs.xyz) installed
 2. Add this repository as a custom repository in HACS:
-   - Repository URL: `https://github.com/hisabimbola/ostrom-hass.git`
+   - Repository URL: `https://github.com/hisabimbola/ostrom-hass`
    - Category: Integration
 3. Click Install
 4. Restart Home Assistant

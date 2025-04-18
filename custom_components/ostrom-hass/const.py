@@ -11,10 +11,6 @@ CONF_CLIENT_SECRET = "client_secret"
 BASE_URL = "https://production.ostrom-api.io"
 AUTH_URL = "https://auth.production.ostrom-api.io/oauth2/token"
 
-# Default client credentials
-DEFAULT_CLIENT_ID = "1c4fcc73d1d89e998d69307ea0ad5fe"
-DEFAULT_CLIENT_SECRET = "514ac2b67536a71513481a38a823d3d013a94e21e17ecaeae41caee8c366139"
-
 # Update interval in seconds (5 minutes)
 UPDATE_INTERVAL = 300
 

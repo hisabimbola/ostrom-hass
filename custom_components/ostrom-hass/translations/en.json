@@ -1,0 +1,23 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Connect to Ostrom",
+                "description": "Set up Ostrom integration. You need your Client ID and Client Secret from Ostrom.",
+                "data": {
+                    "client_id": "Client ID",
+                    "client_secret": "Client Secret",
+                    "zip_code": "ZIP Code"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Failed to connect to Ostrom API",
+            "invalid_auth": "Invalid authentication credentials",
+            "unknown": "Unexpected error occurred"
+        },
+        "abort": {
+            "already_configured": "Ostrom is already configured for this ZIP code"
+        }
+    }
+}

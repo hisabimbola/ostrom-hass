@@ -1,0 +1,19 @@
+get_prices_for_date:
+  name: Get Prices for Date
+  description: Get electricity prices for a specific date
+  fields:
+    date:
+      name: Date
+      description: The date to get prices for (YYYY-MM-DD)
+      required: true
+      example: "2025-03-09"
+      selector:
+        date: {}
+    zip_code:
+      name: ZIP Code
+      description: ZIP code to get prices for. If not provided, uses the configured ZIP code.
+      required: false
+      example: "10115"
+      default: "12351"
+      selector:
+        text: {}

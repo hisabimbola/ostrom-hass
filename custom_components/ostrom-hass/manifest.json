@@ -1,0 +1,11 @@
+{
+  "domain": "ostrom-hass",
+  "name": "Ostrom API Integration",
+  "codeowners": ["@Hisabimbola"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://gitea.idowu.net/abi/ostrom-hass",
+  "iot_class": "cloud_polling",
+  "requirements": ["aiohttp>=3.8.0", "voluptuous>=0.13.1"],
+  "version": "1.0.0"
+}

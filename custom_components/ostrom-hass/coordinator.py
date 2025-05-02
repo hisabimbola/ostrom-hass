@@ -207,7 +207,7 @@ class OstromDataCoordinator(DataUpdateCoordinator[dict[str, Any]]):
 
             return {
                 "electricity_current_price": current_price["price"],
-                "electricity_gross_current_price": current_price["gross_tax_and_levies"],
+                "electricity_gross_current_price": current_price["gross_tax_and_levies"] + current_price["price"],
                 "electricity_next_hour_price": next_price["price"] if next_price else None,
                 "electricity_lowest_price_today": min(today_price_values),
                 "electricity_highest_price_today": max(today_price_values),
